@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b7d7dfeb-05b3-4aae-af62-d544e3580e09" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="news3Flow" doc:id="2622e231-20af-4d1e-9c0c-cca09ad1e6b8" >
+		<http:listener doc:name="Listener" doc:id="bb12b64d-8a6e-41fe-83dc-f62d62559a77" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Hello world" doc:name="Set Payload" doc:id="48c31905-07bd-4c51-84d7-0e2c39b08f13" />
+	</flow>
+</mule>

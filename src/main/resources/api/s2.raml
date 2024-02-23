@@ -1,0 +1,31 @@
+#%RAML 1.0
+title: S2
+
+
+
+/search:
+  get:
+    queryParameters:
+      keyword:
+        type: string
+        minLength: 3
+        maxLength: 10
+    responses:
+          200:
+                body:
+                      application/json:
+                            example: !include examples/searchExample.raml
+                                     
+/news:
+  post:
+    queryParameters:
+      word:
+    body:
+          application/json:
+            type: !include sechams/newsdataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/searchExample.raml
+          
